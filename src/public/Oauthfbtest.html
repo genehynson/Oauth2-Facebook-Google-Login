@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Oauthfbtest Application</title>
+    <link rel="stylesheet" href="Oauthfbtest.css">
+</head>
+<!-- Place this asynchronous JavaScript just before your </body> tag -->
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<body>
+<script type="text/javascript" language="javascript" src="Oauthfbtest.nocache.js"></script>
+<h1>Oauthfbtest Application</h1>
+<span id="signinButton">
+  <span
+          class="g-signin"
+          data-callback="signinCallback"
+          data-clientid="482524296107-ij08oi0uhptc6t6pr84ughcb5pvgi5i5.apps.googleusercontent.com"
+          data-cookiepolicy="single_host_origin"
+          data-requestvisibleactions="http://schema.org/AddAction"
+          data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+<script type="text/javascript">
+    function signinCallback(authResult) {
+        if (authResult['status']['signed_in']) {
+            window.alert("plus result: " + authResult['status']);
+            // Update the app to reflect a signed in user
+            // Hide the sign-in button now that the user is authorized, for example:
+            document.getElementById('signinButton').setAttribute('style', 'display: none');
+        }
+    }
+</script>
+</span>
+</body>
+</html>
